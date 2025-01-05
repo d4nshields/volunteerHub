@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { Configuration } from './configuration';
 import { VolunteerHubCoreService } from './volunteerhub-core.service';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
 describe('VolunteerHubCoreService', () => {
   let service: VolunteerHubCoreService;
@@ -10,12 +10,12 @@ describe('VolunteerHubCoreService', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        BrowserModule             // Fixes NG0402 error
+        BrowserDynamicTestingModule             // Replaces BrowserModule
       ],
       providers: [
         Configuration,
-        provideHttpClient(),
-        VolunteerHubCoreService
+        VolunteerHubCoreService,
+        provideHttpClient()
       ]
     }).compileComponents();
 

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { VolunteerHubCoreService } from './services/volunteerhub-core.service';
 import { Configuration } from './services/configuration';
@@ -10,7 +11,7 @@ import { OrganizationService } from './services/api/organization.service';
 import { UsersService } from './services/api/users.service';
 
 @NgModule({
-  imports: [HttpClientModule],
+  imports: [CommonModule, HttpClientModule],
   providers: [
     VolunteerHubCoreService,
     {
